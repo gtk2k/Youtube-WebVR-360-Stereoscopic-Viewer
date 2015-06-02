@@ -4,9 +4,14 @@ YouTube360°動画ビューワーWebVR(オンリー)版
 ##準備
 [Chrome WebVRビルド版](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ#list)必須。  
 Chrome WebVRビルド版をダウンロードし実行後、
-chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページのEnable WebVRの項目に直接飛びますので、"有効にする"リンクをクリックして有効にします。  
+chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページのEnable WebVRの項目に直接飛びますので、"有効にする"リンクをクリックして有効にします。 
+![enable_webvr](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/enable_webvr.png)  
+↓  
+![enable_webvr_enabled](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/enable_webvr_enabled.png)  
+
 "今すぐ再起動"ボタンをクリックして、再起動します。  
 (ただ、私の環境のせいかもしれませんが、終了するけど起動しないため手動で再度起動します。)
+![再起動ボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/reboot.png)  
 
 ##拡張機能インストール
 GitHubの右側にある"Download ZIP"ボタンをクリックし、DL後、解凍します。  
@@ -14,7 +19,8 @@ Chrome WebVRビルド版で、右上のメニューボタンをクリックし�
 拡張機能のページで、"デベロッパーモード"にチェックします。  
 "パッケージ化されていない拡張機能を読み込む…"ボタンをクリックし、解凍したフォルダを選択し、OKボタンをクリックします。  
 リストに、"Youtube 360動画ビューワー"の拡張機能が表示されたらOKです。  
-(たまにフォルダ選択ダイアログでOKボタンをクリックした時点では、表示されないときがあるのでF5キーを押して更新してみてください。)
+(たまにフォルダ選択ダイアログでOKボタンをクリックした時点では、表示されないときがあるのでF5キーを押して更新してみてください。)  
+![拡張機能リスト](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/extension_list.png)
 
 ##対応動画
 360°動画　サンプル：[Medical Realities - Surgical Training in 360-Degree Virtual Reality](https://www.youtube.com/watch?v=VAUbacNs4MQ)  
@@ -29,5 +35,9 @@ Chrome WebVRビルド版で、右上のメニューボタンをクリックし�
 
 この、"360ビューワーに切り替える"ボタンをクリックすと、360ビューワーに切り替わります。  
 360ビューワーの状態でPキーを押すごとに、モードが切り替わります。  
-![モード切替](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mode_loop.png)
+![モード切替](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mode_loop.png)  
+
+また、Oculus Riftが接続されている場合、360ビューワーに切り替えると、"Oculus Riftで見る"ボタンが表示されます。  
+このボタンをクリックすると、Oculus Riftで見ることができます。
+![Oculus Riftボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/oculus_button.png)
 
