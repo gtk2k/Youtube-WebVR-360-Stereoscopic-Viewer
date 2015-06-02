@@ -2,7 +2,8 @@
 YouTube360°動画ビューワーWebVR版
 
 ##準備
-Oculus Riftで見る場合、[Chrome WebVRビルド版](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ#list)必須。  Oculus Riftで見ない場合は、Chromeの安定版で構いません。
+Oculus Riftで見る場合、[Chrome WebVRビルド版](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ#list)必須。 Oculus Riftで見ない場合は、Chromeの安定版で構いません。
+Oculus Riftで見る場合、Oculus Riftでの表示にWebVRを使用していますので、WebVRを有効にしなければなりません。  
 Chrome WebVRビルド版をダウンロードし実行後、
 chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページのEnable WebVRの項目に直接飛びますので、"有効にする"リンクをクリックして有効にします。 
 ![enable_webvr](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/enable_webvr.png)  
@@ -31,7 +32,7 @@ Chrome WebVRビルド版で、右上のメニューボタンをクリックし�
 に対応しています。
 
 ##操作方法
-拡張機能インストール後、各動画にアクセスするとプレイヤーにアイコンが追加されます。
+拡張機能インストール後、YouTubeの動画ページにアクセスするとプレイヤーにアイコンが追加されます。
 ![360ビューワーボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/youtube_extension_button1.png)  
 
 この、"360ビューワーに切り替える"ボタンをクリックすと、360ビューワーに切り替わります。  
