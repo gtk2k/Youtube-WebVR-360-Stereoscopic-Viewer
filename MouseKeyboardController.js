@@ -48,6 +48,7 @@ function windowKeyDown(event) {
   } else if (event.keyCode == 37 || event.keyCode == 65) { // A or Left key.
     this.animateTheta_(this.theta + KEY_SPEED);
   } else if (event.keyCode == 'P'.charCodeAt(0)) {
+    if (viewerType !== TYPE_PANORAMA) return;
     mesh.rotation.set(0, 0, 0, 'XYZ');
     if (videoInfo.mode === MODE_NORMAL) {
       videoInfo.mode = MODE_SIDE_BY_SIDE;
