@@ -6,7 +6,7 @@ Oculus Riftで見る場合、[Chrome WebVRビルド版](https://drive.google.com
 Chrome WebVRビルド版をダウンロードし実行後、
 chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページのEnable WebVRの項目に直接飛びますので、"有効にする"リンクをクリックして有効にします。 
 ![enable_webvr](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/enable_webvr.png)  
-↓  
+![down_arrow](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/down_arrow.png)  
 ![enable_webvr_enabled](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/enable_webvr_enabled.png)  
 
 "今すぐ再起動"ボタンをクリックして、再起動します。  
