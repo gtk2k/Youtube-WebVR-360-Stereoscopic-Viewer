@@ -46,4 +46,5 @@ Chrome WebVRビルド版で、右上のメニューボタンをクリックし�
 ![Oculus Riftボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/oculus_button.png)
 
 ##問題点
-Chrome WebVRビルド版はよくクラッシュします。
+Chrome WebVRビルド版はよくクラッシュします。  
+Oculus Riftで視聴中は、シークが行えません。
