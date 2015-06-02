@@ -1,5 +1,5 @@
-# YouTube_360Viewer_WebVR
-YouTube360°動画ビューワーWebVR版
+# YouTube_360Viewer_WebVRテスト版
+YouTube360°動画ビューワーWebVRのテスト版です。
 
 ##準備
 Oculus Riftで見る場合、[Chrome WebVRビルド版](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ#list)必須。 Oculus Riftで見ない場合は、Chromeの安定版で構いません。
