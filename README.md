@@ -38,7 +38,7 @@ Chrome WebVRビルド版で、右上のメニューボタンをクリックし�
 360ビューワーに切り替わるとマウスのドラッグで見る方向を操作することができるようになります。
 ![マウスドラッグ](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mouse_drag.png)  
 
-360ビューワーの状態でPキーを押すごとに、モードが切り替わります。  
+360ビューワーの状態でPキーを押すごとに、モード が切り替わります。  
 ![モード切替](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mode_loop.png)  
 
 また、Oculus Riftが接続されている場合、360ビューワーに切り替えると、"Oculus Riftで見る"ボタンが表示されます。  
