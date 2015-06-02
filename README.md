@@ -15,13 +15,7 @@ chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページ�
 ![再起動ボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/reboot.png)  
 
 ##拡張機能インストール
-GitHubの右側にある"Download ZIP"ボタンをクリックし、DL後、解凍します。  
-Chrome WebVRビルド版で、右上のメニューボタンをクリックし、”その他ツール"→"拡張機能"を選択し、  
-拡張機能のページで、"デベロッパーモード"にチェックします。  
-"パッケージ化されていない拡張機能を読み込む…"ボタンをクリックし、解凍したフォルダを選択し、OKボタンをクリックします。  
-リストに、"Youtube 360動画ビューワー"の拡張機能が表示されたらOKです。  
-(たまにフォルダ選択ダイアログでOKボタンをクリックした時点では、表示されないときがあるのでF5キーを押して更新してみてください。)  
-![拡張機能リスト](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/extension_list.png)
+[ウェブストア](https://chrome.google.com/webstore/detail/youtube-360%E5%8B%95%E7%94%BB%E3%83%93%E3%83%A5%E3%83%BC%E3%83%AF%E3%83%BC-webvr%E7%89%88/dklhclnehlegkjdjgjaodcbmffkmagon?hl=ja)からインストールします。
 
 ##対応動画
 360°動画　サンプル：[Medical Realities - Surgical Training in 360-Degree Virtual Reality](https://www.youtube.com/watch?v=VAUbacNs4MQ)  
