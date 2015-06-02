@@ -17,11 +17,15 @@ Chrome WebVRビルド版で、右上のメニューボタンをクリックし�
 (たまにフォルダ選択ダイアログでOKボタンをクリックした時点では、表示されないときがあるのでF5キーを押して更新してみてください。)
 
 ##対応動画
-360°動画 サンプル：[Medical Realities - Surgical Training in 360-Degree Virtual Reality](https://www.youtube.com/watch?v=VAUbacNs4MQ)  
-360°動画サイドバイサイド サンプル：[4000x2000【360sbs】](https://www.youtube.com/watch?v=46efEgE9nsA)  
-360°動画トップアンドボトム　サンプル：[【立体視全天周撮影】ユニティちゃん Candy Rock Star ライブステージ！【stereoscopic sphere movie】](https://www.youtube.com/watch?v=_BERVmTEAeM)  
+360°動画　サンプル：[Medical Realities - Surgical Training in 360-Degree Virtual Reality](https://www.youtube.com/watch?v=VAUbacNs4MQ)  
+360°動画SBS　サンプル：[4000x2000【360sbs】](https://www.youtube.com/watch?v=46efEgE9nsA)  
+360°動画TAB　サンプル：[【立体視全天周撮影】ユニティちゃん Candy Rock Star ライブステージ！【stereoscopic sphere movie】](https://www.youtube.com/watch?v=_BERVmTEAeM)  
 生THETA動画 サンプル：[【Ricoh THETA m15】轉檔前‧雙畫面顯示A](https://www.youtube.com/watch?v=Qp5Z-2MPaek)  
 に対応しています。
+
+##操作方法
+拡張機能インストール後、各動画にアクセスするとプレイヤーにアイコンが追加されます。
+
 
 
 
