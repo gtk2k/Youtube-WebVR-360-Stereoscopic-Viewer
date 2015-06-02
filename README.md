@@ -25,7 +25,7 @@ Chrome WebVRビルド版で、右上のメニューボタンをクリックし�
 
 ##操作方法
 拡張機能インストール後、各動画にアクセスするとプレイヤーにアイコンが追加されます。
-![360ビューワーボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/raw/master/path/to/youtube_extension_button1.png)
+![360ビューワーボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/youtube_extension_button1.png)
 
 
 
