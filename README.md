@@ -25,8 +25,9 @@ Chrome WebVRビルド版で、右上のメニューボタンをクリックし�
 
 ##操作方法
 拡張機能インストール後、各動画にアクセスするとプレイヤーにアイコンが追加されます。
-![360ビューワーボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/youtube_extension_button1.png)
+![360ビューワーボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/youtube_extension_button1.png)  
+
 この、"360ビューワーに切り替える"ボタンをクリックすと、360ビューワーに切り替わります。  
-360ビューワーの状態でPキーを押すごとに、モードが切り替わります。
+360ビューワーの状態でPキーを押すごとに、モードが切り替わります。  
 ![モード切替](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mode_loop.png)
 
