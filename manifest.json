@@ -3,6 +3,7 @@
         {
             "all_frames": true,
             "js": [
+                "chromeStorage.js",
                 "three.min.js",
                 "UI.js",
                 "PanoramaViewer.js",
@@ -14,11 +15,10 @@
             "run_at": "document_end"
         }
     ],
-   "description": "Youtubeの360動画を見る拡張機能(WebVR版)",
-   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqOKzkq2axDMVp4FBsZfHgibU28sUeNyHzkEZGwNn7qlsrG1WsouQgu4FdXmeHxKslFxWYwt557dnANik0gM5shgr8dXpHO3eVDcUCtyuhDzp5RUzxbFLrE+3a96URM9dIiXu8VX49MvKQpqOYNKTuTHYV4npjFl119AX6NfhOjz3rwSO34KBKZp2zw3phmQ053Nabxj8DU8e3BYxTKqGzb5NBFJP2/wXG8wMtMvGMxDIiWE38bpF8ec9kWIZQw2BQLy66qKU+VGqfLOCYBCyDiQlLBvMrkzHuUqvDcGihRb9DdR83ZNfS48Vpsh/07ka0hqRlwHI77Ipj84p6t8YHwIDAQAB",
+   "description": "Youtubeの360動画を見る拡張機能 WebVRテスト版",
    "manifest_version": 2,
-   "name": "Youtube 360動画ビューワー (WebVR版)",
-   "permissions": [ "tabs", "https://www.youtube.com/*" ],
+   "name": "Youtube 360動画ビューワー WebVRテスト版",
+   "permissions": [ "tabs", "storage", "https://www.youtube.com/*" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "0.0.4"
+   "version": "0.0.5"
 }
