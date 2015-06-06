@@ -35,10 +35,13 @@ chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページ�
 360ビューワーの状態でPキーを押すごとに、モードが切り替わります。  
 ![モード切替](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mode_loop.png)  
 
+360°SBSや360°TABモードのときにXキーを押すとアナグリフ表示のON/OFFができます。(現在RED-CYANのみ。今後他のアナグリフに対応するかは未定)
+![anaglyph](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/anaglyph.png)
+
 また、Oculus Riftが接続されている場合、360ビューワーに切り替えると、"Oculus Riftで見る"ボタンが表示されます。  
 このボタンをクリックすると、Oculus Riftで見ることができます。
 ![Oculus Riftボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/oculus_button.png)
 
 ##問題点
 Chrome WebVRビルド版はよくクラッシュします。  
-Oculus Riftで視聴中は、シークが行えません。
+Oculus Riftで視聴中は、シークが行えません。ただ、Youtubeプレイヤーがもともと対応しているキーボード操作でのシークなどの操作は可能です。
