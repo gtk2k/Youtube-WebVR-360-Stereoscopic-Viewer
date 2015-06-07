@@ -43,7 +43,16 @@ var viewerInfo = {
   isSwapEye: false,
   mode: MODE_NORMAL,
   anaglyphMode: ANAGLYPH_MODE_NONE,
-  positionTrackingScale: 6
+  positionTrackingScale: 6,
+  reset: function () {
+    this.isPanorama = false;
+    this.isFlipH = false;
+    this.isFlipV = false;
+    this.isSwapEye = false;
+    this.mode = MODE_NORMAL;
+    this.anaglyphMode = ANAGLYPH_MODE_NONE;
+    this.ositionTrackingScale = 6;
+  }
 }
 
 
@@ -69,7 +78,8 @@ function createOrResetPanoramaViewer(panoramaViewerClassName) {
     mesh.rotation.set(0, 0, 0);
     return;
   }
-
+  videoWidth = videoContainer.parentNode.offsetWidth;
+  videoHeight = videoContainer.parentNode.offsetHeight;
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(videoWidth, videoWidth / 1.777 | 0);
   renderer.domElement.id = 'panoramaViewer';
@@ -273,13 +283,19 @@ function render() {
     renderer.enableScissorTest(true);
     // render left eye
     camera.projectionMatrix = projectionMatrixL;
+    mesh.material.uniforms.flipH.value = +viewerInfo.isFlipH;
+    mesh.material.uniforms.flipV.value = +viewerInfo.isFlipV;
     mesh.material.uniforms.side.value = getSide(viewerInfo.isSwapEye ? SIDE_RIGHT : SIDE_LEFT);
+    mesh.material.uniforms.anaglyph.value = viewerInfo.anaglyphMode;
     renderer.setViewport(0, 0, size.width, size.height);
     renderer.setScissor(0, 0, size.width, size.height);
     renderer.render(scene, camera);
     // render right eye
     camera.projectionMatrix = projectionMatrixR;
+    mesh.material.uniforms.flipH.value = +viewerInfo.isFlipH;
+    mesh.material.uniforms.flipV.value = +viewerInfo.isFlipV;
     mesh.material.uniforms.side.value = getSide(viewerInfo.isSwapEye ? SIDE_LEFT : SIDE_RIGHT);
+    mesh.material.uniforms.anaglyph.value = viewerInfo.anaglyphMode;
     renderer.setViewport(size.width, 0, size.width, size.height);
     renderer.setScissor(size.width, 0, size.width, size.height);
     renderer.render(scene, camera);

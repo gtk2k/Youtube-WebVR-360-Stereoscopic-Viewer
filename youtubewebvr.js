@@ -42,7 +42,7 @@ function getVRDevices() {
 
 window.addEventListener('wdoYoutubePlayerReady', function (event) {
   console.log('Youtube Player Ready');
-  initViewer();
+  detectChangeVideo();
 }, false);
 
 window.addEventListener('wdoChangeStateYoutubePlayer', function (event) {
@@ -50,7 +50,7 @@ window.addEventListener('wdoChangeStateYoutubePlayer', function (event) {
   youtubePlayerState = event.detail;
 
   if (youtubePlayerState === -1) {
-    initViewer();
+    detectChangeVideo();
   }
 
 }, false);
@@ -67,13 +67,14 @@ window.addEventListener('wdoBeginCloseOculusWindowResponse', function (event) {
   //chrome.runtime.sendMessage({ action: ACTION_CLOSE_OCULUS_WINDOW, currentTime: event.detail });
 }, false);
 
-//function detectChangeVideo() {
-//  //cvRafId = requestAnimationFrame(detectChangeVideo);
-//  var title = document.getElementById('eow-title') || document.getElementsByClassName('html5-title-text')[0];
-//  if (title && title.textContent !== videoTitle) {
-//    initViewer();
-//  }
-//}
+function detectChangeVideo() {
+  cvRafId = requestAnimationFrame(detectChangeVideo);
+  var title = document.getElementById('eow-title') || document.getElementsByClassName('html5-title-text')[0];
+  if (title && title.textContent !== videoTitle) {
+    cancelAnimationFrame(cvRafId);
+    initViewer();
+  }
+}
 
 //if (!cvRafId) {
 //  detectChangeVideo();
@@ -81,15 +82,19 @@ window.addEventListener('wdoBeginCloseOculusWindowResponse', function (event) {
 
 function initViewer() {
   isEmbed = location.href.indexOf('https://www.youtube.com/embed/') !== -1;
+  player = document.getElementsByClassName('html5-video-player')[0];
   var title = document.getElementById('eow-title') || document.getElementsByClassName('html5-title-text')[0];
   videoContainer = document.getElementsByClassName('html5-video-container')[0];
   video = document.getElementsByTagName('video')[0];
+  if (!title.textContent) {
+    disposePanoramaViewer();
+    return;
+  }
   buttonContainer = document.getElementsByClassName('html5-player-chrome')[0];
-  videoWidth = videoContainer.parentNode.offsetWidth;
-  videoHeight = videoContainer.parentNode.offsetHeight;
+ 
   videoTitle = title.textContent;
   console.log('videoTitle', videoTitle);
-
+  viewerInfo.reset();
   getViewerInfo(videoTitle);
   getVRDevices();
   //if(!vrHMD)

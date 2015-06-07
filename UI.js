@@ -1,6 +1,6 @@
 ///<reference path="chromeStorage.js"/>
 
-var player = document.getElementsByClassName('html5-video-player')[0];
+var player;
 var buttonContainer;
 var btnPanorama, btnPanoramaPath, btnPanoramaToolTip, btnPanoramaToolTipText, btnPanoramaToolTipArrow;
 var btnOculus, btnOculusToolTip, btnOculusToolTipText, btnOculusToolTipArow;
@@ -79,6 +79,9 @@ function createOrResetPanoramaButton() {
   }
   btnPanorama.onclick = function () {
     if (!youtubePlayerState) return;
+    videoWidth = videoContainer.parentNode.offsetWidth;
+    videoHeight = videoContainer.parentNode.offsetHeight;
+    renderer.setSize(videoWidth, videoWidth / 1.777);
     youtubeSwitchViewer();
   };
   var g = document.createElementNS(xmlns, 'g');

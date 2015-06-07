@@ -18,5 +18,5 @@
    "name": "Youtube 360動画ビューワー WebVRテスト版",
    "permissions": [ "tabs", "https://www.youtube.com/*" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "0.0.6"
+   "version": "0.0.10"
 }
