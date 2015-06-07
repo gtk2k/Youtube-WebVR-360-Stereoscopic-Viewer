@@ -40,7 +40,9 @@ chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページ�
 
 また、Oculus Riftが接続されている場合、360ビューワーに切り替えると、"Oculus Riftで見る"ボタンが表示されます。  
 このボタンをクリックすると、Oculus Riftで見ることができます。
-![Oculus Riftボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/oculus_button.png)
+![Oculus Riftボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/oculus_button.png)  
+
+Zキーを押すとOculus Riftのセンサーをリセットします(リセンター)。
 
 ##問題点
 
