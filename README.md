@@ -43,5 +43,7 @@ chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページ�
 ![Oculus Riftボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/oculus_button.png)
 
 ##問題点
-Chrome WebVRビルド版はよくクラッシュします。  
-Oculus Riftで視聴中は、シークが行えません。ただ、Youtubeプレイヤーがもともと対応しているキーボード操作でのシークなどの操作は可能です。
+
+* Chrome WebVRビルド版はよくクラッシュします。  
+* Oculus Riftで視聴中は、シークが行えません。ただ、Youtubeプレイヤーがもともと対応しているキーボード操作でのシークなどの操作は可能です。
+* 動画によっては、Chrome WebVRビルド版でアクセスすると、videoエレメントのsrc属性に設定されるURLのドメインがgooglevideo.comになるものがあります(Chrome安定版で同じ動画にアクセスしてもyoutube.comドメインになるのですが)。セキュリティによって別ドメインの画像や動画をWebGLのテクスチャーにはできないため、このような動画は現在360ビューワーを使用できないようにしています。(将来対応予定)
