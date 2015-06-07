@@ -1,9 +1,7 @@
 {
     "content_scripts": [
         {
-            "all_frames": true,
             "js": [
-                "chromeStorage.js",
                 "three.min.js",
                 "UI.js",
                 "PanoramaViewer.js",
@@ -18,7 +16,7 @@
    "description": "Youtubeの360動画を見る拡張機能 WebVRテスト版",
    "manifest_version": 2,
    "name": "Youtube 360動画ビューワー WebVRテスト版",
-   "permissions": [ "tabs", "storage", "https://www.youtube.com/*" ],
+   "permissions": [ "tabs", "https://www.youtube.com/*" ],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "0.0.5"
+   "version": "0.0.6"
 }
