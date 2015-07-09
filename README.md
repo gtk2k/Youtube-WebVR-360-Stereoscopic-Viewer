@@ -26,6 +26,7 @@ YouTube player add button after install
 ![360Viewer button](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/youtube_extension_button1.png)  
 
 After installation, it will be added button.
+"Change to 360Viewer" 360Viewer mouse drag a change view direction like the YouTube official panorama player. 
 ![mouse drag](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mouse_drag.png)  
 
 "P" key press, change movie type.  
