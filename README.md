@@ -1,5 +1,5 @@
 # YouTube_360Viewer_WebVR test ver
-YouTube360°動画ビューワーWebVRのテスト版です。
+
 
 ##Ready
 necessary [Chrome WebVR build](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ#list).  
