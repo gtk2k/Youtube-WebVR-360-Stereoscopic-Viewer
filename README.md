@@ -28,18 +28,18 @@ YouTube player add button after install
 After installation, it will be added button.
 ![mouse drag](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mouse_drag.png)  
 
-P key press, change movie type.  
+"P" key press, change movie type.  
 ![change movie type](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mode_loop.png)  
 
-X key press, turn on/off the anaglyph.
+"X" key press, turn on/off the anaglyph.
 ![anaglyph](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/anaglyph.png)
 
 Eye button click, change to Oculus Rift.
 ![Oculus Rift button](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/oculus_button.png)  
 
-Z key press, Oculus Rift recenter.
+"Z" key press, Oculus Rift recenter.
 
-I key press, swap eye camera.
+"I" key press, swap eye camera.
 
 ##Issues
 video element src a cross domain not support.
