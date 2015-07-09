@@ -2,7 +2,9 @@
 Sorry, I can't speak English.
 
 ##Ready
-necessary [Chrome WebVR build](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ#list).  
+Chrome stable/dev/canary, Not support the Oculus Rift.
+
+[Chrome WebVR build](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ#list), Supprot the Oculus Rift   
 enable WebVR (chrome://flags/#enable-webvr)  
 ![enable_webvr](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/enable_webvr.png)  
 ![down_arrow](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/down_arrow.png)  
