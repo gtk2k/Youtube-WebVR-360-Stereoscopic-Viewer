@@ -38,4 +38,4 @@ Eye button click, change to Oculus Rift.
 
 Z key press, Oculus Rift recenter.
 
-I key press, swap eye.
+I key press, swap eye camera.
