@@ -32,7 +32,7 @@ chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページ�
 360ビューワーに切り替わるとマウスのドラッグで見る方向を操作することができるようになります。
 ![マウスドラッグ](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mouse_drag.png)  
 
-360ビューワーの状態でPキーを押すごとに、モードが切り替わります。  
+360ビューワーの状態でPキーを押すごとに、またはモード名をクリックするごとに、モードが切り替わります。
 ![モード切替](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mode_loop.png)  
 
 360°SBSや360°TABモードのときにXキーを押すとアナグリフ表示のON/OFFができます。(現在RED-CYANのみ。今後他のアナグリフに対応するかは未定)
