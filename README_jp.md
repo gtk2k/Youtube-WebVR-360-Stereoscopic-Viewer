@@ -25,7 +25,7 @@ chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページ�
 に対応しています。
 
 ##操作方法
-拡張機能インストール後、YouTubeの動画ページにアクセスするとプレイヤーにアイコンが追加されます。
+拡張機能インストール後、YouTubeの動画ページにアクセスするとプレイヤーにボタンが追加されます。
 ![360ビューワーボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/youtube_extension_button1.png)  
 
 この、"360ビューワーに切り替える"ボタンをクリックすと、360ビューワーに切り替わります。  
