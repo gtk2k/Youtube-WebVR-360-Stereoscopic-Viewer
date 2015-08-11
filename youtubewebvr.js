@@ -11,6 +11,9 @@ var isEmbed = false;
 var videoContainer, video, videoWidth, videoHeight, videoTitle = '';
 var videoId;
 var vrHMD, vrPositionSensor;
+var PLAYER_VERSION_OLD = 'OLD';
+var PLAYER_VERSION_20150801 = '20150801';
+var playerVersion = PLAYER_VERSION_20150801;
 
 function getVRDevices() {
   return new Promise(function(resolve, reject){
@@ -70,6 +73,9 @@ window.addEventListener('wdoBeginCloseOculusWindowResponse', function (event) {
 function detectChangeVideo() {
   cvRafId = requestAnimationFrame(detectChangeVideo);
   var title = document.getElementById('eow-title') || document.getElementsByClassName('html5-title-text')[0];
+  toolTipText = document.querySelector('.ytp-tooltip-text');
+  toolTip = toolTipText.parentElement.parentElement;
+  toolTip.className = 'ytp-tooltip ytp-bottom';
   if (title && title.textContent !== videoTitle) {
     cancelAnimationFrame(cvRafId);
     initViewer();
@@ -82,7 +88,7 @@ function detectChangeVideo() {
 
 function initViewer() {
   isEmbed = location.href.indexOf('https://www.youtube.com/embed/') !== -1;
-  player = document.getElementsByClassName('html5-video-player')[0];
+  player = document.getElementById('movie_player');
   var title = document.getElementById('eow-title') || document.getElementsByClassName('html5-title-text')[0];
   videoContainer = document.getElementsByClassName('html5-video-container')[0];
   video = document.getElementsByTagName('video')[0];
@@ -91,7 +97,12 @@ function initViewer() {
     return;
   }
   buttonContainer = document.getElementsByClassName('html5-player-chrome')[0];
- 
+  if (buttonContainer) {
+    playerVersion = PLAYER_VERSION_OLD;
+  } else {
+    buttonContainer = document.getElementsByClassName('ytp-chrome-controls')[0];
+  }
+
   videoTitle = title.textContent;
   console.log('videoTitle', videoTitle);
   viewerInfo.reset();
@@ -112,7 +123,7 @@ function initViewer() {
   if (video.src.indexOf('googlevideo.com/videoplayback') !== -1) {
     btnPanorama.style.display = 'none';
     lblPanoramaMode.style.display = '';
-    lblPanoramaMode.textContent = '動画が別ドメインであるためビューワーを起動できません'
+    lblPanoramaMode.textContent = 'Warning: Video source a different domain.'
   } else {
     btnPanorama.style.display = '';
     lblPanoramaMode.style.display = 'none';
@@ -139,7 +150,6 @@ function getViewerInfo(title) {
 function youtubeSwitchViewer() {
   if (viewerInfo.isPanorama) {
     viewerInfo.isPanorama = false;
-    btnPanoramaToolTipText.textContent = changeToPanoramaViewerText;
     btnPanoramaPath.setAttributeNS(null, 'd', changeToPanoramaViewerSVG);
     if (isEmbed) {
       document.getElementsByTagName('video')[0].style.display = '';
@@ -147,21 +157,18 @@ function youtubeSwitchViewer() {
       videoContainer.style.display = '';
     }
     renderer.domElement.style.display = 'none';
-    btnOculus.style.display = 'none';
+    btnOculus.style.display = vrHMD && vrHMD.deviceName !== 'Mockulus Rift' ? '' : 'none';
     lblPanoramaMode.style.display = 'none';
 
-    //disposePanoramaViewer();
     stopRender();
   } else {
     viewerInfo.isPanorama = true;
-    btnPanoramaToolTipText.textContent = returnToYoutubePlayerText;
     btnPanoramaPath.setAttributeNS(null, 'd', returnToYoutubePlayerSVG);
-    btnOculus.style.display = vrHMD && vrHMD.deviceName !== 'Mockulus Rift' ? '' : 'none';
+    //btnOculus.style.display = vrHMD && vrHMD.deviceName !== 'Mockulus Rift' ? '' : 'none';
     lblPanoramaMode.style.display = '';
     videoContainer.parentNode.appendChild(renderer.domElement);
     videoContainer.style.display = 'none';
     renderer.domElement.style.display = '';
-    //createPanoramaViewer('html5-main-video');
     startRender();
   }
 }
