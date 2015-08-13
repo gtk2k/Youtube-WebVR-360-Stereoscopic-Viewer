@@ -1,0 +1,9 @@
+{
+  "title": "YouTube 360 Viewer",
+  "name": "youtube360viewer",
+  "version": "0.0.1",
+  "description": "YouTube 360 Panorama Viewer",
+  "main": "index.js",
+  "author": "gtk2k",
+  "license": "MIT"
+}

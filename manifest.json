@@ -13,10 +13,8 @@
             "run_at": "document_end"
         }
     ],
-   "description": "Youtubeの360動画を見る拡張機能 WebVRテスト版",
+   "name": "Youtube  WebVR 360 Stereoscopic Viewer",
+   "description": "Youtube WebVR 360 degrees Stereoscopic movie viewer",
    "manifest_version": 2,
-   "name": "Youtube 360動画ビューワー WebVRテスト版",
-   "permissions": [ "tabs", "https://www.youtube.com/*" ],
-   "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "0.0.10"
+   "version": "0.0.18"
 }

@@ -33,7 +33,7 @@ var size, isEmbed = false;
 var eyeFOVL, eyeFOVR;
 var projectionMatrixL, projectionMatrixR;
 var defaultProjectionMatrix;
-var positionTrackingScale = 6;
+var positionTrackingScale = 0;
 
 var isAutoChange = false;
 var viewerInfo = {

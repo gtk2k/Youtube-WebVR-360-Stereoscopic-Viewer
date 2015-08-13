@@ -5,6 +5,9 @@ var youtubePlayer;
     var wdoYoutubePlayerReadyEvent = new CustomEvent('wdoYoutubePlayerReady', { detail: player });
     window.dispatchEvent(wdoYoutubePlayerReadyEvent);
     youtubePlayer = player;
+    console.log(player.getVideoUrl());
+    var vsrc = 'blob:' + escape(player.getVideoUrl());
+    console.log(vsrc);
     var flg = false;
     youtubePlayer.addEventListener("onStateChange", function (newState) {
       if (newState == -1 /*|| newState == 3*/) {

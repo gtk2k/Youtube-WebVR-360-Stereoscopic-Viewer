@@ -75,7 +75,7 @@ function createOrResetOculusButton() {
   btnOculus = document.createElement('button');
   btnOculus.classList.add('ytp-button');
   btnOculus.style.cssFloat = 'right';
-  //btnOculus.style.display = 'none';
+  btnOculus.style.display = 'none';
   btnOculus.setAttribute('aria-label', viewOnOculusText);
   btnOculus.id = 'btnWdoOculus';
   var svg = document.createElementNS(xmlns, 'svg');

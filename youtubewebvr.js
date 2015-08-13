@@ -10,13 +10,15 @@ var youtubePlayerState = 1;
 var isEmbed = false;
 var videoContainer, video, videoWidth, videoHeight, videoTitle = '';
 var videoId;
-var vrHMD, vrPositionSensor;
+var vrHMD = 'getVRDeivce not yet', vrPositionSensor;
 var PLAYER_VERSION_OLD = 'OLD';
 var PLAYER_VERSION_20150801 = '20150801';
 var playerVersion = PLAYER_VERSION_20150801;
 
 function getVRDevices() {
   return new Promise(function(resolve, reject){
+    var isReady = vrHMD === 'ready';
+    vrHMD = null;
     if (navigator.getVRDevices) {
       navigator.getVRDevices().then(function (devices) {
         for (var i = 0; i < devices.length; i++) {
@@ -32,13 +34,11 @@ function getVRDevices() {
             vrPositionSensor = devices[i];
           }
         }
-      }).then(function () {
-        if (viewerInfo.isPanorama) {
-          if (btnOculus) {
-            btnOculus.style.display = vrHMD && vrHMD.deviceName !== 'Mockulus Rift' ? '' : 'none';
-          }
-        }
       });
+    }
+    if (isReady) {
+      viewerInfo.isPanorama = true;
+      youtubeSwitchViewer();
     }
   });
 }
@@ -117,13 +117,17 @@ function initViewer() {
   createOrResetPanoramaModeLabel();
   createOrResetPositionTrackingScaleLabel();
 
-  viewerInfo.isPanorama = true;
-  youtubeSwitchViewer();
+  if (vrHMD !== 'getVRDeivce not yet'){
+    viewerInfo.isPanorama = true;
+    youtubeSwitchViewer();
+  } else {
+    vrHMD = 'ready';
+  }
 
   if (video.src.indexOf('googlevideo.com/videoplayback') !== -1) {
     btnPanorama.style.display = 'none';
     lblPanoramaMode.style.display = '';
-    lblPanoramaMode.textContent = 'Warning: Video source a different domain.'
+    lblPanoramaMode.textContent = 'Warning: Different domain a video source.'
   } else {
     btnPanorama.style.display = '';
     lblPanoramaMode.style.display = 'none';
@@ -157,14 +161,14 @@ function youtubeSwitchViewer() {
       videoContainer.style.display = '';
     }
     renderer.domElement.style.display = 'none';
-    btnOculus.style.display = vrHMD && vrHMD.deviceName !== 'Mockulus Rift' ? '' : 'none';
+    btnOculus.style.display = 'none'; //vrHMD && vrHMD.deviceName !== 'Mockulus Rift' ? '' : 'none';
     lblPanoramaMode.style.display = 'none';
 
     stopRender();
   } else {
     viewerInfo.isPanorama = true;
     btnPanoramaPath.setAttributeNS(null, 'd', returnToYoutubePlayerSVG);
-    //btnOculus.style.display = vrHMD && vrHMD.deviceName !== 'Mockulus Rift' ? '' : 'none';
+    btnOculus.style.display = vrHMD && vrHMD.deviceName !== 'Mockulus Rift' ? '' : 'none';
     lblPanoramaMode.style.display = '';
     videoContainer.parentNode.appendChild(renderer.domElement);
     videoContainer.style.display = 'none';
