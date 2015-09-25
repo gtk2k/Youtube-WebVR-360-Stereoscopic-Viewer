@@ -43,6 +43,8 @@ function windowMouseMove(event) {
 
   targetRotationY = targetRotationOnMouseDownY - (mouseY - mouseYOnMouseDown) * 0.004;
   targetRotationX = targetRotationOnMouseDownX - (mouseX - mouseXOnMouseDown) * 0.004;
+  if (targetRotationY > 1) targetRotationY = 1;
+  if (targetRotationY < -1) targetRotationY = -1;
 }
 
 function windowMouseUp() {
@@ -74,7 +76,11 @@ function windowKeyDown(event) {
         viewerInfo.mode = MODE_TOP_AND_BOTTOM;
       } else if (viewerInfo.mode === MODE_TOP_AND_BOTTOM) {
         viewerInfo.mode = MODE_RAW_THETA;
+        changeTHETAUniforms(0.905, 0.242, 0.625, 0.747, 0.625);
       } else if (viewerInfo.mode === MODE_RAW_THETA) {
+        viewerInfo.mode = MODE_RAW_THETA_S;
+        changeTHETAUniforms(0.821, 0.2913, 0.62, 0.7536, 0.62);
+      } else if (viewerInfo.mode === MODE_RAW_THETA_S) {
         viewerInfo.mode = MODE_NORMAL;
       }
       setPanoramaModeText();

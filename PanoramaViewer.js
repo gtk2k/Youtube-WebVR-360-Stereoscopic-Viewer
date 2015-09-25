@@ -6,6 +6,7 @@ var MODE_NORMAL = 0;
 var MODE_SIDE_BY_SIDE = 1;
 var MODE_TOP_AND_BOTTOM = 2;
 var MODE_RAW_THETA = 3;
+var MODE_RAW_THETA_S = 4;
 
 var ANAGLYPH_MODE_NONE = 0;
 var ANAGLYPH_MODE_RED_CYAN = 1;
@@ -19,14 +20,16 @@ var SIDE_RIGHT = 2;
 var SIDE_TOP = 3;
 var SIDE_BOTTOM = 4;
 var SIDE_RAW_THETA = 5;
+var SIDE_RAW_THETA_S = 6;
 
-var scene, geometry;
+var scene;
+var geometry, planeGeometry;
+var mesh, planeMesh;
 var renderer;
 var camera;
 var controls;
 var material;
 var videoTexture;
-var mesh;
 var rotator;
 var renderRafId = 0;
 var size, isEmbed = false;
@@ -54,10 +57,63 @@ var viewerInfo = {
     this.ositionTrackingScale = 6;
   }
 }
-
-
 var fullscreenchange = document.body.mozRequestFullScreen ? 'mozfullscreenchange' : 'webkitfullscreenchange';
 var isFullScreen = false;
+
+var thetaRadius = 0;
+var xLOffset = 0;
+var xROffset = 0;
+var yLOffset = 0;
+var yROffset = 0;
+
+//window.addEventListener('keydown', function (e) {
+//  if (e.keyCode === 'Q'.charCodeAt(0)) {
+//    thetaRadius += 0.001;
+//  } else if (e.keyCode === 'A'.charCodeAt(0)) {
+//    thetaRadius -= 0.001;
+//  } else if (e.keyCode === 'W'.charCodeAt(0)) {
+//    xLOffset += 0.0001;
+//  } else if (e.keyCode === 'S'.charCodeAt(0)) {
+//    xLOffset -= 0.0001;
+//  } else if (e.keyCode === 'E'.charCodeAt(0)) {
+//    xROffset += 0.0001;
+//  } else if (e.keyCode === 'D'.charCodeAt(0)) {
+//    xROffset -= 0.0001;
+//  } else if (e.keyCode === 'R'.charCodeAt(0)) {
+//    yLOffset += 0.0001;
+//  } else if (e.keyCode === 'V'.charCodeAt(0)) {
+//    yLOffset -= 0.0001;
+//  } else if (e.keyCode === 'Y'.charCodeAt(0)) {
+//    yROffset += 0.0001;
+//  } else if (e.keyCode === 'H'.charCodeAt(0)) {
+//    yROffset -= 0.0001;
+//  }
+//  material.uniforms.thetaRadius.value = thetaRadius;
+//  material.uniforms.xLOffset.value = xLOffset;
+//  material.uniforms.xROffset.value = xROffset;
+//  material.uniforms.yLOffset.value = yLOffset;
+//  material.uniforms.yROffset.value = yROffset;
+//  console.log('k = ' + k + '; lOffset = ' + lOffset + '; rOffset = ' + rOffset + '; yLOffset = ' + yLOffset + '; yROffset = ' + yROffset + ';');
+//});
+var equirectangularDispFlg = false;
+window.addEventListener('keydown', function (e) {
+  if (e.keyCode === 'E'.charCodeAt(0)) {
+    equirectangularDispFlg = !equirectangularDispFlg;
+    if (equirectangularDispFlg) {
+      rotator.remove(mesh);
+      rotator.add(planeMesh);
+      //rotator.rotateX(-Math.PI / 4);
+    } else {
+      rotator.remove(planeMesh);
+      rotator.add(mesh);
+      //rotator.rotateX(Math.PI / 4);
+    }
+  }
+  //if (e.keyCode === 'R'.charCodeAt(0)) {
+  //  rotator.rotateZ(90 * Math.PI / 180);
+  //}
+});
+
 document.addEventListener(fullscreenchange, function () {
   var fullScreenElement = document.mozFullScreenElement || document.webkitFullscreenElement;
   isFullScreen = !!fullScreenElement;
@@ -134,13 +190,19 @@ function createOrResetPanoramaViewer(panoramaViewerClassName) {
   videoTexture.generateMipmaps = false;
   geometry = new THREE.SphereGeometry(100, 128, 128);
   geometry.applyMatrix(new THREE.Matrix4().makeScale(-1, 1, 1));
+  planeGeometry = new THREE.PlaneBufferGeometry(177, 100);
   material = new THREE.ShaderMaterial({
     uniforms: {
       texture: { type: 't', value: videoTexture },
       flipH: { type: 'i', value: +viewerInfo.isFlipH },
       flipV: { type: 'i', value: +viewerInfo.isFlipV },
       side: { type: 'i', value: SIDE_NONE },
-      anaglyph: { type: 'i', value: +viewerInfo.anaglyphMode }
+      anaglyph: { type: 'i', value: +viewerInfo.anaglyphMode },
+      thetaRadius: { type: 'f', value: thetaRadius },
+      xLOffset: { type: 'f', value: xLOffset },
+      xROffset: { type: 'f', value: xROffset },
+      yLOffset: { type: 'f', value: yLOffset },
+      yROffset: { type: 'f', value: yROffset }
     },
     vertexShader: [
         'varying vec2 vUv;',
@@ -157,8 +219,13 @@ function createOrResetPanoramaViewer(panoramaViewerClassName) {
         'uniform int flipV;',
         'uniform int side;',
         'uniform int anaglyph;',
-        'float k = 0.905;',
+        'uniform float thetaRadius;',
+        'uniform float xLOffset;',
+        'uniform float xROffset;',
+        'uniform float yLOffset;',
+        'uniform float yROffset;',
         'void main(void) {',
+        '  float PI = 3.14159265358979323846264;',
         '  vec2 texPos = vec2(vUv.x, vUv.y);',
         '  if(anaglyph == 0){',
         '    if(flipH == 1){',
@@ -178,24 +245,43 @@ function createOrResetPanoramaViewer(panoramaViewerClassName) {
         '    } else if(side == ' + SIDE_BOTTOM + '){        // SIDE_BOTTOM',
         '      texPos = vec2(texPos.x, texPos.y * 0.5 + 0.5);',
         '    } else if(side == ' + SIDE_RAW_THETA + '){     // SIDE_RAW_THETA',
-        '      float PI = 3.14159265358979323846264;',
         '      float theta = 2.0 * PI * texPos.x;',
-        '      float x = mod((texPos.y * 2.0), 1.0) * k * cos(theta);',
-        '      float y = mod((texPos.y * 2.0), 1.0) * k * sin(theta);',
+        '      float x = mod((texPos.y * 2.0), 1.0) * thetaRadius * cos(theta);',
+        '      float y = mod((texPos.y * 2.0), 1.0) * thetaRadius * sin(theta);',
         '',
         '      float theta2 = 2.0 * PI * (1.0 - texPos.x);',
-        '      float x2 = (1.0 - mod((texPos.y * 2.0), 1.0)) * k * cos(theta2);',
-        '      float y2 = (1.0 - mod((texPos.y * 2.0), 1.0)) * k * sin(theta2);',
+        '      float x2 = (1.0 - mod((texPos.y * 2.0), 1.0)) * thetaRadius * cos(theta2);',
+        '      float y2 = (1.0 - mod((texPos.y * 2.0), 1.0)) * thetaRadius * sin(theta2);',
         '',
         '      if (texPos.y < 0.5)',
         '      {',
-        '        texPos.x = x * 0.25 + 0.242;',
-        '        texPos.y = y * 0.5 + 0.625;',
+        '        texPos.x = x * 0.25 + xLOffset;',
+        '        texPos.y = y * 0.5 + yLOffset;',
         '      }',
         '      else',
         '      {',
-        '        texPos.x = x2 * 0.25 + 0.747;',
-        '        texPos.y = y2 * 0.5 + 0.625;',
+        '        texPos.x = x2 * 0.25 + xROffset;',
+        '        texPos.y = y2 * 0.5 + yROffset;',
+        '      }',
+        '      texPos.y = texPos.y * 960.0 / 1080.0;',
+        '    } else if(side == ' + SIDE_RAW_THETA_S + '){     // SIDE_RAW_THETA_S',
+        '      float theta = 2.0 * PI * texPos.x;',
+        '      float x = mod((texPos.y * 2.0), 1.0) * thetaRadius * cos(theta);',
+        '      float y = mod((texPos.y * 2.0), 1.0) * thetaRadius * sin(theta);',
+        '',
+        '      float theta2 = 2.0 * PI * (1.0 - texPos.x + 0.5);',
+        '      float x2 = (1.0 - mod((texPos.y * 2.0), 1.0)) * thetaRadius * cos(theta2);',
+        '      float y2 = (1.0 - mod((texPos.y * 2.0), 1.0)) * thetaRadius * sin(theta2);',
+        '',
+        '      if (texPos.y < 0.5)',
+        '      {',
+        '          texPos.x = x * 0.25 + xLOffset;',
+        '          texPos.y = y * 0.5 + yLOffset;',
+        '      }',
+        '      else',
+        '      {',
+        '          texPos.x = x2 * 0.25 + xROffset;',
+        '          texPos.y = y2 * 0.5 + yROffset;',
         '      }',
         '      texPos.y = texPos.y * 960.0 / 1080.0;',
         '    }',
@@ -227,14 +313,27 @@ function createOrResetPanoramaViewer(panoramaViewerClassName) {
     side: THREE.DoubleSide
   });
   mesh = new THREE.Mesh(geometry, material);
+
+  planeMesh = new THREE.Mesh(planeGeometry, material);
+  planeMesh.position.set(0, 0, -65);
+
   rotator = new THREE.Object3D();
   rotator.add(mesh);
   scene.add(rotator);
+  //rotator.rotateX(Math.PI / 4);
 
   //window.addEventListener('resize', windowResize, false);
 
   renderer.domElement.addEventListener('mousedown', viewerMouseDown, false);
   window.addEventListener('keydown', windowKeyDown, false);
+}
+
+function changeTHETAUniforms(tr, xl, yl, xr, yr) {
+  material.uniforms.thetaRadius.value = tr;
+  material.uniforms.xLOffset.value = xl;
+  material.uniforms.xROffset.value = xr;
+  material.uniforms.yLOffset.value = yl;
+  material.uniforms.yROffset.value = yr;
 }
 
 function disposePanoramaViewer() {
@@ -345,6 +444,8 @@ function getSide(side) {
       return side === SIDE_LEFT ? SIDE_TOP : SIDE_BOTTOM;
     } else if (viewerInfo.mode === MODE_RAW_THETA) {
       return SIDE_RAW_THETA;
+    } else if (viewerInfo.mode === MODE_RAW_THETA_S) {
+      return SIDE_RAW_THETA_S;
     } else {
       return SIDE_NONE;
     }

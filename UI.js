@@ -83,7 +83,7 @@ function createOrResetOculusButton() {
   svg.setAttributeNS(null, 'width', '100%');
   svg.setAttributeNS(null, 'height', '100%');
   svg.setAttributeNS(null, 'viewBox', '0, 0, 64, 64');
-  btnOculus.onmouseover = function () {
+  btnOculus.addEventListener('mouseover', function () {
     toolTipText.textContent = viewOnOculusText;
     var playerOffset = getOffset(player);
     var btnOculusOffset = getOffset(btnOculus);
@@ -91,11 +91,11 @@ function createOrResetOculusButton() {
     //toolTip.style.display = '';
     toolTipText = 'View On Oculus Rift';
     toolTip.style.left = (btnOculusOffset.left - playerOffset.left - ((toolTipText.offsetWidth - 20) / 2)) + 'px';
-  };
-  btnOculus.onmouseleave = function () {
+  });
+  btnOculus.addEventListener('mouseleave', function () {
     btnOculusPath.style.fill = 'rgb(235, 235, 236)';
     //toolTip.style.display = 'none';
-  };
+  });
   btnOculus.onclick = function () {
     if (!youtubePlayerState) return;
     if (vrHMD && vrPositionSensor) {
@@ -147,7 +147,11 @@ function createOrResetPanoramaModeLabel() {
       viewerInfo.mode = MODE_TOP_AND_BOTTOM;
     } else if (viewerInfo.mode === MODE_TOP_AND_BOTTOM) {
       viewerInfo.mode = MODE_RAW_THETA;
+      changeTHETAUniforms(0.905, 0.242, 0.625, 0.747, 0.625);
     } else if (viewerInfo.mode === MODE_RAW_THETA) {
+      viewerInfo.mode = MODE_RAW_THETA_S;
+      changeTHETAUniforms(0.821, 0.7536, 0.62, 0.2913, 0.62);
+    } else if (viewerInfo.mode === MODE_RAW_THETA_S) {
       viewerInfo.mode = MODE_NORMAL;
     }
     setPanoramaModeText();
@@ -183,9 +187,11 @@ function setPanoramaModeText() {
   } else if (viewerInfo.mode === MODE_SIDE_BY_SIDE) {
     lblPanoramaMode.textContent = '360° SBS';
   } else if (viewerInfo.mode === MODE_TOP_AND_BOTTOM) {
-    lblPanoramaMode.textContent = '360° TAB';
+    lblPanoramaMode.textContent = '360° TB';
   } else if (viewerInfo.mode === MODE_RAW_THETA) {
-    lblPanoramaMode.textContent = 'THETA';
+    lblPanoramaMode.textContent = 'THETA m15';
+  } else if (viewerInfo.mode === MODE_RAW_THETA_S) {
+    lblPanoramaMode.textContent = 'THETA S';
   }
 }
 

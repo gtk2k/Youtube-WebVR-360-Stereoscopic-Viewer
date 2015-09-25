@@ -145,9 +145,29 @@ function getViewerInfo(title) {
     viewerInfo.flipH = m.indexOf('fh') !== -1;
     viewerInfo.flipV = m.indexOf('fv') !== -1;
     viewerInfo.swapEye = m.indexOf('se') !== -1;
-    viewerInfo.mode =
-      m.indexOf('sbs') === -1 ? m.indexOf('tab') === -1 ? m.indexOf('theta') === -1 ? m.indexOf('θ') === -1 ?
-      MODE_NORMAL : MODE_RAW_THETA : MODE_RAW_THETA : MODE_TOP_AND_BOTTOM : MODE_SIDE_BY_SIDE;
+    if(m.indexOf('sbs') !== -1){
+      viewerInfo.mode = MODE_SIDE_BY_SIDE;
+    } else if(m.indexOf('tb') !== -1 || m.indexOf('tab') !== -1){
+      viewerInfo.mode = MODE_TOP_AND_BOTTOM;
+    } else if (m.indexOf('theta') !== -1 || m.indexOf('Θ') !== -1) {
+      if (m.indexOf('m15') !== -1) {
+        viewerInfo.mode = MODE_RAW_THETA;
+        thetaRadius = 0.905;
+        xLOffset = 0.242;
+        yLOffset = 0.625;
+        xROffset = 0.747;
+        yROffset = 0.625;
+        //changeTHETAUniforms(0.905, 0.242, 0.625, 0.747, 0.625);
+      } else {
+        viewerInfo.mode = MODE_RAW_THETA_S;
+        thetaRadius = 0.821;
+        xLOffset = 0.2913;
+        yLOffset = 0.62;
+        xROffset = 0.7536;
+        yROffset = 0.62;
+        //changeTHETAUniforms(0.821, 0.2913, 0.62, 0.7536, 0.62);
+      }
+    }
   }
 }
 
