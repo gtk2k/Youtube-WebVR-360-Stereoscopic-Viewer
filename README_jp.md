@@ -18,7 +18,7 @@ Oculus Riftで見ない場合は、Chromeの安定版で構いません。
 (ただ、私の環境のせいかもしれませんが、終了するけど起動しないため手動で再度起動します。)
 ![再起動ボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/reboot.png)  
 
-##インストール
+##拡張機能をインストール
 [ウェブストア](https://chrome.google.com/webstore/detail/youtube-360%E5%8B%95%E7%94%BB%E3%83%93%E3%83%A5%E3%83%BC%E3%83%AF%E3%83%BC-webvr%E7%89%88/dklhclnehlegkjdjgjaodcbmffkmagon?hl=ja)からインストールします。
 
 ##対応動画
