@@ -1,6 +1,3 @@
-# YouTube_360Viewer_WebVRテスト版
-YouTube360°動画ビューワーWebVRのテスト版です。
-
 ##準備
 Oculus Riftで見る場合、[Chrome WebVRビルド版](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ#list)必須です。  
 ただし、Chrome WebVRビルド版(でのWebVR機能)は残念ながら、Oculus Runtime 0.7 では動作しません。0.5 か 0.6 のランタイムをインストールすれば動作します。  
