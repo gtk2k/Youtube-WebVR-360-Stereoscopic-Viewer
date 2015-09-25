@@ -22,11 +22,11 @@ Oculus Riftで見ない場合は、Chromeの安定版で構いません。
 [ウェブストア](https://chrome.google.com/webstore/detail/youtube-360%E5%8B%95%E7%94%BB%E3%83%93%E3%83%A5%E3%83%BC%E3%83%AF%E3%83%BC-webvr%E7%89%88/dklhclnehlegkjdjgjaodcbmffkmagon?hl=ja)にアクセスし、インストールします。
 
 ##対応動画
-360°動画　サンプル：[Medical Realities - Surgical Training in 360-Degree Virtual Reality](https://www.youtube.com/watch?v=VAUbacNs4MQ)  
-360°動画SBS　サンプル：[4000x2000【360sbs】](https://www.youtube.com/watch?v=46efEgE9nsA)  
-360°動画TAB　サンプル：[【立体視全天周撮影】ユニティちゃん Candy Rock Star ライブステージ！【stereoscopic sphere movie】](https://www.youtube.com/watch?v=_BERVmTEAeM)  
-生THETA動画　サンプル：[【Ricoh THETA m15】轉檔前‧雙畫面顯示A](https://www.youtube.com/watch?v=Qp5Z-2MPaek)  
-に対応しています。
+360°動画サンプル：[Medical Realities - Surgical Training in 360-Degree Virtual Reality](https://www.youtube.com/watch?v=VAUbacNs4MQ)  
+360°動画サイドバイサイド(SBS)サンプル：[4000x2000【360sbs】](https://www.youtube.com/watch?v=46efEgE9nsA)  
+360°動画トップボトム(TB)サンプル：[【立体視全天周撮影】ユニティちゃん Candy Rock Star ライブステージ！【stereoscopic sphere movie】](https://www.youtube.com/watch?v=_BERVmTEAeM)  
+THETA m15 Dual Fisheye動画サンプル：[【Ricoh THETA m15】轉檔前‧雙畫面顯示A](https://www.youtube.com/watch?v=Qp5Z-2MPaek)  
+とTHETA SのDualFisheye動画に対応しています。
 
 ##操作方法
 拡張機能インストール後、YouTubeの動画ページにアクセスするとプレイヤーにボタンが追加されます。
@@ -36,8 +36,9 @@ Oculus Riftで見ない場合は、Chromeの安定版で構いません。
 360ビューワーに切り替わるとマウスのドラッグで見る方向を操作することができるようになります。
 ![マウスドラッグ](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mouse_drag.png)  
 
-360ビューワーの状態でPキーを押すごとに、またはモード名をクリックするごとに、モードが切り替わります。
-![モード切替](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mode_loop.png)  
+360ビューワーの状態でPキーを押すごとに、またはモード名をクリックするごとに、
+360° → 360°SBS → 360°TB → THETA m15 → THETA S → 360°に戻る
+というループでモードが切り替わります。
 
 360°SBSや360°TABモードのときにXキーを押すとアナグリフ表示のON/OFFができます。(現在RED-CYANのみ。今後他のアナグリフに対応するかは未定)
 ![anaglyph](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/anaglyph.png)
