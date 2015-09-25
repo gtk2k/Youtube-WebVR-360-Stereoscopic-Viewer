@@ -1,4 +1,3 @@
-# YouTube_360Viewer_WebVR test ver
 Sorry, I can't speak English.
 
 ##Ready
