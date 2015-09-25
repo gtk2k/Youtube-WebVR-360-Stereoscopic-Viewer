@@ -4,7 +4,7 @@ Oculus Riftで見る場合、[Chrome WebVRビルド版](https://drive.google.com
 未確認ですが、0.5のランタイムであればWin以外のOSでも動作するかもしれません。  
 Oculus Riftで見ない場合は、Chromeの安定版で構いません。  
 
-##Chrome WebVR版
+##Chrome WebVRビルド版
 デフォルトでは、WebVR機能が有効になっていませんのでWebVR機能を有効にしなければなりません。  
 インストールした後、 chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページのEnable WebVR の項目に直接飛びますので、"有効にする"リンクをクリックして有効にします。 
 ![enable_webvr](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/enable_webvr.png)  
