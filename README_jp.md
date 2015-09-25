@@ -23,7 +23,8 @@ Oculus Riftで見ない場合は、Chromeの安定版で構いません。
 360°動画サイドバイサイド(SBS)サンプル：[4000x2000【360sbs】](https://www.youtube.com/watch?v=46efEgE9nsA)  
 360°動画トップボトム(TB)サンプル：[【立体視全天周撮影】ユニティちゃん Candy Rock Star ライブステージ！【stereoscopic sphere movie】](https://www.youtube.com/watch?v=_BERVmTEAeM)  
 THETA m15 Dual Fisheye動画サンプル：[【Ricoh THETA m15】轉檔前‧雙畫面顯示A](https://www.youtube.com/watch?v=Qp5Z-2MPaek)  
-とTHETA SのDualFisheye動画に対応しています。
+とTHETA SのDualFisheye動画に対応しています。  
+THETA m15とTHETA Sは簡易的にステッチしているためつなぎ目は目立ちます。
 
 ##操作方法
 拡張機能インストール後、YouTubeの動画ページにアクセスするとプレイヤーにボタンが追加されます。
