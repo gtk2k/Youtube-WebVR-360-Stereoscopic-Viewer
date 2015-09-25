@@ -12,7 +12,7 @@ Oculus Riftで見ない場合は、Chromeの安定版で構いません。
 ![enable_webvr_enabled](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/enable_webvr_enabled.png)  
 
 "今すぐ再起動"ボタンをクリックして、再起動します。  
-(ただ、私の環境のせいかもしれませんが、終了するけど起動しないため手動で再度起動します。)
+(ただ、私の環境のせいかもしれませんが、終了するけど再起動しないため手動で再度起動します。)
 ![再起動ボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/reboot.png)  
 
 ##拡張機能をインストール
