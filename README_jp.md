@@ -2,11 +2,14 @@
 YouTube360°動画ビューワーWebVRのテスト版です。
 
 ##準備
-Oculus Riftで見る場合、[Chrome WebVRビルド版](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ#list)必須。 Oculus Riftで見る場合、Chrome WebVRビルド版(でのWebVR機能)は残念ながら、Oculus Runtime 0.7 では動作しません。0.5 か 0.6 のランタイムをインストールすれば動作します。 
-Oculus Riftで見ない場合は、Chromeの安定版で構いません。
-Oculus Riftで見る場合、Oculus Riftでの表示にWebVRを使用していますので、WebVRを有効にしなければなりません。  
-Chrome WebVRビルド版をダウンロードし実行後、
-chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページのEnable WebVRの項目に直接飛びますので、"有効にする"リンクをクリックして有効にします。 
+Oculus Riftで見る場合、[Chrome WebVRビルド版](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ#list)必須です。ただし、Chrome WebVRビルド版(でのWebVR機能)は残念ながら、Oculus Runtime 0.7 では動作しません。  
+0.5 か 0.6 のランタイムをインストールすれば動作します。  
+未確認ですが、0.5のランタイムであればWin以外のOSでも動作するかもしれません。  
+Oculus Riftで見ない場合は、Chromeの安定版で構いません。  
+
+##Chrome WebVR版
+デフォルトでは、WebVR機能が有効になっていませんのでWebVR機能を有効にしなければなりません。  
+新ストールした後、 chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページのEnable WebVR の項目に直接飛びますので、"有効にする"リンクをクリックして有効にします。 
 ![enable_webvr](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/enable_webvr.png)  
 ![down_arrow](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/down_arrow.png)  
 ![enable_webvr_enabled](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/enable_webvr_enabled.png)  
