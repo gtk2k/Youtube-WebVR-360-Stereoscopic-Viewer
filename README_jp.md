@@ -2,7 +2,8 @@
 YouTube360°動画ビューワーWebVRのテスト版です。
 
 ##準備
-Oculus Riftで見る場合、[Chrome WebVRビルド版](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ#list)必須。 Oculus Riftで見ない場合は、Chromeの安定版で構いません。
+Oculus Riftで見る場合、[Chrome WebVRビルド版](https://drive.google.com/folderview?id=0BzudLt22BqGRbW9WTHMtOWMzNjQ#list)必須。 Oculus Riftで見る場合、Chrome WebVRビルド版(でのWebVR機能)は残念ながら、Oculus Runtime 0.7 では動作しません。0.5 か 0.6 のランタイムをインストールすれば動作します。 
+Oculus Riftで見ない場合は、Chromeの安定版で構いません。
 Oculus Riftで見る場合、Oculus Riftでの表示にWebVRを使用していますので、WebVRを有効にしなければなりません。  
 Chrome WebVRビルド版をダウンロードし実行後、
 chrome://flags/#enable-webvr にアクセスしたら、Chrome://flagsページのEnable WebVRの項目に直接飛びますので、"有効にする"リンクをクリックして有効にします。 
@@ -49,3 +50,4 @@ Zキーを押すとOculus Riftのセンサーをリセットします(リセン�
 * Chrome WebVRビルド版はよくクラッシュします。  
 * Oculus Riftで視聴中は、シークが行えません。ただ、Youtubeプレイヤーがもともと対応しているキーボード操作でのシークなどの操作は可能です。
 * 動画によっては、Chrome WebVRビルド版でアクセスすると、videoエレメントのsrc属性に設定されるURLのドメインがgooglevideo.comになるものがあります(Chrome安定版で同じ動画にアクセスしてもyoutube.comドメインになるのですが)。セキュリティによって別ドメインの画像や動画をWebGLのテクスチャーにはできないため、このような動画は現在360ビューワーを使用できないようにしています。
+* フルスクリーンにすると、映像が表示されません。
