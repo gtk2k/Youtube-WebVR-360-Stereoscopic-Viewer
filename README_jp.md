@@ -30,7 +30,7 @@ THETA m15 Dual Fisheye動画サンプル：[【Ricoh THETA m15】轉檔前‧雙
 拡張機能インストール後、YouTubeの動画ページにアクセスするとプレイヤーにボタンが追加されます。
 ![360ビューワーボタン](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/youtube_extension_button1.png)  
 
-この、"360ビューワーに切り替える"ボタンをクリックすと、360ビューワーに切り替わります。  
+追加されたボタンをクリックすと、360ビューワーに切り替わります。  
 360ビューワーに切り替わるとマウスのドラッグで見る方向を操作することができるようになります。
 ![マウスドラッグ](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/mouse_drag.png)  
 
