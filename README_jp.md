@@ -38,7 +38,7 @@ THETA m15 Dual Fisheye動画サンプル：[【Ricoh THETA m15】轉檔前‧雙
 360° → 360°SBS → 360°TB → THETA m15 → THETA S → 以降ループ  
 というループで、モードが切り替わります。
 
-360°SBSや360°TABモードのときにXキーを押すとアナグリフ表示のON/OFFができます。(現在RED-CYANのみ。今後他のアナグリフに対応するかは未定)
+360°SBSや360°TBモードのときにXキーを押すとアナグリフ表示のON/OFFができます。(現在RED-CYANのみ。今後他のアナグリフに対応するかは未定)
 ![anaglyph](https://github.com/gtk2k/YouTube_360Viewer_WebVR/blob/master/readme_image/anaglyph.png)
 
 また、Oculus Riftが接続されている場合、360ビューワーに切り替えると、"Oculus Riftで見る"ボタンが表示されます。  
